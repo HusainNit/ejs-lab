@@ -11,11 +11,11 @@
 
     <% menuItems.forEach((item)=>{ %>
     <ol>
-      <li><%=item.name%></li>
+      <li><%=item.name%> <% if(item.rating === 5) {%><small>⭐</small> <%}%></li>
 
       <ul>
         <li>$<%=item.price%></li>
-        <li><%=item.rating %>⭐</li>
+        <li><%=item.rating %>☆</li>
         <li><%=item.details %></li>
       </ul>
     </ol>
