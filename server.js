@@ -70,4 +70,14 @@ app.get("/menu", (req, res) => {
   });
 });
 
+app.get("/menu/:category", (req, res) => {
+  const menuItems = RESTAURANT.menu.filter((item) => {
+    return item.category === req.params.category;
+  });
+  res.render("category.ejs", {
+    categoryName:req.params.category.charAt(0).toUpperCase()+req.params.category.slice(1),
+    menuItems: menuItems,
+  });
+});
+
 app.listen(3000);
